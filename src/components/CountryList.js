@@ -1,5 +1,6 @@
 import React from "react";
 import Inputs from "./Inputs";
+import Country from "./Country";
 
 const CountryList = () => {
 	return (
@@ -7,6 +8,7 @@ const CountryList = () => {
 			<div className="max-width">
 				<Inputs />
 			</div>
+			<Country />
 		</div>
 	);
 };

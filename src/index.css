@@ -14,6 +14,7 @@ body {
 img {
 	max-width: 100%;
 }
+
 .max-width {
 	@apply px-5 lg:max-w-5xl lg:mx-auto xl:max-w-6xl 2xl:px-0;
 }

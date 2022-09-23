@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-//Country API
-import countryAPI from "../../common/apis/linkAPI";
+import axios from "axios";
+//URL
+const baseURL = "https://restcountries.com/v2/all";
 
 //Country Thunk Action
 export const fetchAsyncCountries = createAsyncThunk(
 	"countries/fetchAsyncCountries",
 	async () => {
-		const response = await countryAPI.get("/all");
+		const response = await axios(baseURL);
 		return response.data;
 	}
 );

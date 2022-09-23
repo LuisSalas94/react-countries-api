@@ -29,7 +29,7 @@ const Inputs = () => {
 			</div>
 			<div>
 				<select className="w-80 md:w-80 shadow-md border border-gray-300 text-gray-500 block text-sm rounded-lg bg-white p-3">
-					<option selected>Filter by Region</option>
+					<option>Filter by Region</option>
 					<option>Africa</option>
 					<option>Americas</option>
 					<option>Asia</option>
