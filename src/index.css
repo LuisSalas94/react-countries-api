@@ -16,5 +16,5 @@ img {
 }
 
 .max-width {
-	@apply px-5 lg:max-w-5xl lg:mx-auto xl:max-w-6xl 2xl:px-0;
+	@apply px-5 lg:max-w-7xl lg:mx-auto xl:max-w-screen-2xl 2xl:px-0;
 }

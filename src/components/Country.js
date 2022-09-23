@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncCountries } from "../features/countries/countrySlice";
+import { Link } from "react-router-dom";
 
 const Country = () => {
 	const data = useSelector((state) => state.countries.countries);
-
 	const dispatch = useDispatch();
+
 	useEffect(() => {
 		try {
 			dispatch(fetchAsyncCountries());
@@ -18,7 +19,8 @@ const Country = () => {
 		<>
 			{data &&
 				data.map((country) => (
-					<div
+					<Link
+						to={`/${country.alpha3Code}`}
 						className="cursor-pointer w-72 bg-white rounded-lg border border-gray-100 shadow-lg hover:scale-105 transform transition duration-500"
 						key={country.alpha2Code}
 					>
@@ -43,7 +45,7 @@ const Country = () => {
 								<span className="text-zinc-400">{country.capital}</span>
 							</p>
 						</div>
-					</div>
+					</Link>
 				))}
 		</>
 	);

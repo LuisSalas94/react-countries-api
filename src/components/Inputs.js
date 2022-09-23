@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import {
 	fetchAsynCountryByName,
 	fetchAsyncByRegion,
+	fetchAsyncCountries,
 } from "../features/countries/countrySlice";
 
 const Inputs = () => {
@@ -19,7 +20,11 @@ const Inputs = () => {
 
 	const selectRegion = () => {
 		const searchValue = regionInputRef.current.value;
-		dispatch(fetchAsyncByRegion(searchValue));
+		if (searchValue === "All") {
+			dispatch(fetchAsyncCountries());
+		} else {
+			dispatch(fetchAsyncByRegion(searchValue));
+		}
 	};
 
 	return (
@@ -57,6 +62,7 @@ const Inputs = () => {
 					onChange={selectRegion}
 				>
 					<option>Filter by Region</option>
+					<option>All</option>
 					<option>Africa</option>
 					<option>Americas</option>
 					<option>Asia</option>
