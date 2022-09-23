@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
 	return (
-		<div className="shadow-sm py-4">
+		<div className="shadow-sm py-4 ">
 			<div className="max-width flex items-center justify-between">
 				<h1>Where in the World?</h1>
 				<div className="flex items-center justify-between cursor-pointer">
