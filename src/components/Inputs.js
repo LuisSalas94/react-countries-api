@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { fetchAsynCountryByName } from "../features/countries/countrySlice";
+import {
+	fetchAsynCountryByName,
+	fetchAsyncByRegion,
+} from "../features/countries/countrySlice";
 
 const Inputs = () => {
 	const dispatch = useDispatch();
@@ -16,7 +19,7 @@ const Inputs = () => {
 
 	const selectRegion = () => {
 		const searchValue = regionInputRef.current.value;
-		console.log(searchValue);
+		dispatch(fetchAsyncByRegion(searchValue));
 	};
 
 	return (

@@ -23,6 +23,17 @@ export const fetchAsynCountryByName = createAsyncThunk(
 	}
 );
 
+//Fetch Region Thunk Action
+export const fetchAsyncByRegion = createAsyncThunk(
+	"countries/fetchAsyncByRegion",
+	async (searchValue) => {
+		const response = await axios.get(
+			`https://restcountries.com/v2/region/${searchValue}`
+		);
+		return response.data;
+	}
+);
+
 //Initial State
 const initialState = {
 	countries: [],
@@ -43,6 +54,13 @@ const countrySlice = createSlice({
 		},
 		[fetchAsynCountryByName.fulfilled]: (state, { payload }) => {
 			console.log("Country by name fetched successfully");
+			return {
+				...state,
+				countries: payload,
+			};
+		},
+		[fetchAsyncByRegion.fulfilled]: (state, { payload }) => {
+			console.log("Region fetched successfully");
 			return {
 				...state,
 				countries: payload,
