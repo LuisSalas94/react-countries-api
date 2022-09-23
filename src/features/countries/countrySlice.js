@@ -3,11 +3,22 @@ import axios from "axios";
 //URL
 const baseURL = "https://restcountries.com/v2/all";
 
-//Country Thunk Action
+//Fetch All Countries Thunk Action
 export const fetchAsyncCountries = createAsyncThunk(
 	"countries/fetchAsyncCountries",
 	async () => {
 		const response = await axios(baseURL);
+		return response.data;
+	}
+);
+
+//Fetch Country By Name Thunk Action
+export const fetchAsynCountryByName = createAsyncThunk(
+	"countries/fetchAsynCountryByName",
+	async (searchValue) => {
+		const response = await axios.get(
+			`https://restcountries.com/v2/name/${searchValue}`
+		);
 		return response.data;
 	}
 );
@@ -25,6 +36,13 @@ const countrySlice = createSlice({
 	extraReducers: {
 		[fetchAsyncCountries.fulfilled]: (state, { payload }) => {
 			console.log("Successfully fetched countries");
+			return {
+				...state,
+				countries: payload,
+			};
+		},
+		[fetchAsynCountryByName.fulfilled]: (state, { payload }) => {
+			console.log("Country by name fetched successfully");
 			return {
 				...state,
 				countries: payload,

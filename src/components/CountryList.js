@@ -8,7 +8,9 @@ const CountryList = () => {
 			<div className="max-width">
 				<Inputs />
 			</div>
-			<Country />
+			<div className="mt-10 bg-slate-50  grid grid-cols-1 gap-4 justify-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+				<Country />
+			</div>
 		</div>
 	);
 };

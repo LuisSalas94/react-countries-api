@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
+import { fetchAsynCountryByName } from "../features/countries/countrySlice";
 
 const Inputs = () => {
+	const dispatch = useDispatch();
+	const countriesInputRef = useRef();
+	const regionInputRef = useRef();
+
+	const searchCountries = () => {
+		const searchValue = countriesInputRef.current.value;
+		if (searchValue.trim()) {
+			dispatch(fetchAsynCountryByName(searchValue));
+		}
+	};
+
+	const selectRegion = () => {
+		const searchValue = regionInputRef.current.value;
+		console.log(searchValue);
+	};
+
 	return (
 		<div className="flex flex-col items-center gap-5 md:flex-row justify-between">
 			<div className="relative">
@@ -24,11 +42,17 @@ const Inputs = () => {
 				<input
 					type="text"
 					placeholder="Search for a country..."
-					className="w-80 md:w-80 shadow-md border border-gray-300 text-gray-500 block pl-10 p-2.5 text-sm rounded-lg "
+					className="w-80 md:w-80 shadow-md border border-gray-300 text-gray-500 block pl-10 p-2.5 text-sm rounded-lg"
+					ref={countriesInputRef}
+					onChange={searchCountries}
 				/>
 			</div>
 			<div>
-				<select className="w-80 md:w-80 shadow-md border border-gray-300 text-gray-500 block text-sm rounded-lg bg-white p-3">
+				<select
+					className="w-80 md:w-80 shadow-md border border-gray-300 text-gray-500 block text-sm rounded-lg bg-white p-3"
+					ref={regionInputRef}
+					onChange={selectRegion}
+				>
 					<option>Filter by Region</option>
 					<option>Africa</option>
 					<option>Americas</option>
