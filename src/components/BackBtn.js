@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const BackBtn = () => {
+const BackBtn = ({ darkMode }) => {
 	const navigate = useNavigate();
 
 	const backToHome = () => {
@@ -12,7 +12,9 @@ const BackBtn = () => {
 		<div className="p-10">
 			<button
 				onClick={backToHome}
-				className="flex items-center bg-white text-slate-400 font-medium py-2 px-6 border border-slate-400 rounded shadow-xl"
+				className={`flex items-center bg-white text-slate-400 font-medium py-2 px-6 border border-slate-400 rounded shadow-xl back ${
+					darkMode ? "darkMode" : ""
+				}`}
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

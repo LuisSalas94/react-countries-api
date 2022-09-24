@@ -8,7 +8,7 @@ import {
 	clearCountry,
 } from "../features/country/countryByCodeSlice";
 
-const CountryDetails = () => {
+const CountryDetails = ({ darkMode }) => {
 	const { alpha3Code } = useParams();
 	const data = useSelector((state) => state.countryByCode.country);
 	const { isLoading } = useSelector((state) => state.countryByCode);
@@ -52,20 +52,24 @@ const CountryDetails = () => {
 	}
 
 	return (
-		<div className="bg-slate-50 h-screen">
-			<BackBtn />
+		<div className={`bg-slate-50 h-screen app ${darkMode ? "darkMode" : ""}`}>
+			<BackBtn darkMode={darkMode} />
 			{isLoading ? (
 				<Spinner />
 			) : (
-				<div className="flex flex-col gap-14 px-10 pt-2 bg-slate-50 lg:flex-row justify-center items-center lg:gap-32">
+				<div
+					className={`flex flex-col gap-14 px-10 pt-2 bg-slate-50 lg:flex-row justify-center items-center lg:gap-32 app ${
+						darkMode ? "darkMode" : ""
+					}`}
+				>
 					<img src={flag} alt="Flag" className="h-56  md:h-80 lg:h-80 " />
-					<div className="">
+					<div className="info">
 						<h1 className="font-bold text-3xl">{name}</h1>
 						<div className="md:flex gap-10 items-baseline">
 							<ul className="my-6">
 								<li>
 									<span className="font-medium">Native Name: </span>{" "}
-									<span className="font-extralight">{nativeName}</span>
+									<span className="font-extralight values">{nativeName}</span>
 								</li>
 								<li className="my-3">
 									<span className="font-medium">Population: </span>{" "}
@@ -109,7 +113,11 @@ const CountryDetails = () => {
 							<ul className="pt-3 flex items-center flex-wrap gap-2">
 								{bordersCountry.map((border) => (
 									<li key={border} className="mt-3">
-										<span className="bg-white px-9 py-2 border rounded shadow text-xs">
+										<span
+											className={`bg-white px-9 py-2 border rounded shadow text-xs border_country ${
+												darkMode ? "darkMode" : ""
+											}`}
+										>
 											<span className="font-extralight">{border}</span>
 										</span>
 									</li>

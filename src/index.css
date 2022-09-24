@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--dark-mode-elements: hsl(209, 23%, 22%);
+	--dark-mode-background: hsl(207, 26%, 17%);
+	--light-mode-elements: hsl(0, 0%, 100%);
+	--light-mode-background: hsl(0, 0%, 98%);
+}
+
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -17,4 +24,50 @@ img {
 
 .max-width {
 	@apply px-5 lg:max-w-7xl lg:mx-auto xl:max-w-screen-2xl 2xl:px-0;
+}
+
+.app {
+	background-color: var(--light-mode-background);
+}
+
+.app.darkMode {
+	background-color: var(--dark-mode-background);
+	color: #fff;
+}
+
+.header.darkMode {
+	background-color: var(--dark-mode-elements);
+	color: #fff;
+}
+
+.search_input.darkMode {
+	background-color: var(--dark-mode-elements);
+	color: #fff;
+}
+
+.search_input.darkMode input {
+	color: #fff;
+}
+
+.country.darkMode {
+	background-color: var(--dark-mode-elements);
+	color: #fff;
+}
+
+.country .values.darkMode {
+	color: lightgray;
+}
+
+.back.darkMode {
+	background-color: var(--dark-mode-elements);
+	color: #fff;
+}
+
+.info .values.darkMode {
+	color: lightgray;
+}
+
+.border_country.darkMode {
+	background-color: var(--dark-mode-elements);
+	color: #fff;
 }
