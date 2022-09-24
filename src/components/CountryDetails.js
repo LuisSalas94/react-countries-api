@@ -46,11 +46,11 @@ const CountryDetails = () => {
 	return (
 		<div className="bg-slate-50 h-screen">
 			<BackBtn />
-			<div className="flex flex-col px-10 pt-2 bg-slate-50">
-				<img src={flag} alt="" />
-				<div>
-					<h1 className="my-6 font-bold text-3xl">{name}</h1>
-					<div>
+			<div className="flex flex-col gap-14 px-10 pt-2 bg-slate-50 lg:flex-row justify-center items-center lg:gap-32">
+				<img src={flag} alt="Flag" className="h-56  md:h-80 lg:h-80 " />
+				<div className="">
+					<h1 className="font-bold text-3xl">{name}</h1>
+					<div className="md:flex gap-10 items-baseline">
 						<ul className="my-6">
 							<li>
 								<span className="font-medium">Native Name: </span>{" "}
