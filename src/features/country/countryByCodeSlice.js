@@ -15,6 +15,7 @@ export const fetchAsyncCountryByCode = createAsyncThunk(
 //Initial State
 const initialState = {
 	country: [],
+	isLoading: true,
 };
 
 //Country Slice
@@ -32,6 +33,7 @@ const countryByCodeSlice = createSlice({
 			return {
 				...state,
 				country: payload,
+				isLoading: false,
 			};
 		},
 	},
