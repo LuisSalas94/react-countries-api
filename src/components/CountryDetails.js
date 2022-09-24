@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import BackBtn from "./BackBtn";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchAsyncCountryByCode } from "../features/country/countryByCodeSlice";
+import {
+	fetchAsyncCountryByCode,
+	clearCountry,
+} from "../features/country/countryByCodeSlice";
 
 const CountryDetails = () => {
 	const { alpha3Code } = useParams();
@@ -12,6 +15,9 @@ const CountryDetails = () => {
 
 	useEffect(() => {
 		dispatch(fetchAsyncCountryByCode(alpha3Code));
+		return () => {
+			dispatch(clearCountry());
+		};
 	}, []);
 
 	const {

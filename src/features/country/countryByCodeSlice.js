@@ -21,7 +21,11 @@ const initialState = {
 const countryByCodeSlice = createSlice({
 	name: "countryByCode",
 	initialState,
-	reducers: {},
+	reducers: {
+		clearCountry: (state) => {
+			state.country = [];
+		},
+	},
 	extraReducers: {
 		[fetchAsyncCountryByCode.fulfilled]: (state, { payload }) => {
 			console.log("Country by code fetched successfully");
@@ -33,5 +37,5 @@ const countryByCodeSlice = createSlice({
 	},
 });
 
-export const { addCountryByCode } = countryByCodeSlice.actions;
+export const { addCountryByCode, clearCountry } = countryByCodeSlice.actions;
 export default countryByCodeSlice.reducer;
