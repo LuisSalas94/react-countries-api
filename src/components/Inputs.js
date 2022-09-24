@@ -20,11 +20,10 @@ const Inputs = () => {
 
 	const selectRegion = () => {
 		const searchValue = regionInputRef.current.value;
-		if (searchValue === "All") {
-			dispatch(fetchAsyncCountries());
-		} else {
-			dispatch(fetchAsyncByRegion(searchValue));
-		}
+
+		searchValue === "All"
+			? dispatch(fetchAsyncCountries())
+			: dispatch(fetchAsyncByRegion(searchValue));
 	};
 
 	return (

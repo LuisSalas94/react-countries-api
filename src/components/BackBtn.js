@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-//Create new slice to fetch country by code
 const BackBtn = () => {
 	const navigate = useNavigate();
 

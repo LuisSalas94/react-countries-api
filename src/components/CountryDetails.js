@@ -9,7 +9,6 @@ import {
 
 const CountryDetails = () => {
 	const { alpha3Code } = useParams();
-
 	const data = useSelector((state) => state.countryByCode.country);
 	const dispatch = useDispatch();
 
@@ -18,7 +17,7 @@ const CountryDetails = () => {
 		return () => {
 			dispatch(clearCountry());
 		};
-	}, []);
+	}, [dispatch, alpha3Code]);
 
 	const {
 		name,
@@ -91,7 +90,7 @@ const CountryDetails = () => {
 							<li className="my-3">
 								<span className="font-medium">Languages: </span>
 								{languagesCountry.map((item) => (
-									<span>
+									<span key={item}>
 										<span className="font-extralight">{item}</span>
 										{", "}
 									</span>
@@ -103,7 +102,7 @@ const CountryDetails = () => {
 						<span className="font-medium">Border Countries: </span>
 						<ul className="pt-3 flex items-center flex-wrap gap-2">
 							{bordersCountry.map((border) => (
-								<li className="mt-3">
+								<li key={border} className="mt-3">
 									<span className="bg-white px-9 py-2 border rounded shadow text-xs">
 										<span className="font-extralight">{border}</span>
 									</span>

@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	return (
 		<div className="shadow-sm py-4 ">
 			<div className="max-width flex items-center justify-between">
-				<h1>Where in the World?</h1>
+				<Link to={"/"}>Where in the World?</Link>
 				<div className="flex items-center justify-between cursor-pointer">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

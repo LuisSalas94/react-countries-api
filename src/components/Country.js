@@ -13,7 +13,7 @@ const Country = () => {
 		} catch (err) {
 			console.log(err);
 		}
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<>
