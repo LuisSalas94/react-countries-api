@@ -25,8 +25,8 @@ My users should be able to:
 ## Full Screen View
 <img src="./src/demo1.png" alt="Demo View" />
 <img src="./src/demo2.png" alt="Demo View" />
-<img src="./src/demo3.png" alt="Demo View" />
 <img src="./src/demo4.png" alt="Demo View" />
+<img src="./src/demo3.png" alt="Demo View" />
 
 ## Instructions
 
@@ -47,7 +47,7 @@ $ npm start # or yarn start
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://react-countries-api-fernando.netlify.app/)
 
 
 ## Author 👤
@@ -62,15 +62,11 @@ Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](../../issues/).
 
 ## Acknowledgments 📚 
-Original challenge by [Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G)
+Original challenge by [Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Link of the Challenge
-
-[Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
 ## 📝 License
 
