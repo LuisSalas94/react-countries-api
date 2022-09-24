@@ -1,9 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
+//Create new slice to fetch country by code
 const BackBtn = () => {
+	const navigate = useNavigate();
+
+	const backToHome = () => {
+		navigate("/");
+	};
+
 	return (
 		<div className="p-10">
-			<button className="flex items-center bg-white text-slate-400 font-medium py-2 px-6 border border-slate-400 rounded shadow-xl">
+			<button
+				onClick={backToHome}
+				className="flex items-center bg-white text-slate-400 font-medium py-2 px-6 border border-slate-400 rounded shadow-xl"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
